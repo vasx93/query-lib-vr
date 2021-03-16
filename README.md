@@ -8,12 +8,21 @@ const results = await getAllQueryController(Model, req, res)
 Features:
 
 Regex:
-const match = match.replace(/\b(gt|gte|lt|lte)\b/g, match => `$${match}`)
+
+Making use of >, >=, <, <= in query strings and translating so MongoDB can read them.
 
 Output would be
-http://my-site/api/products?price[gte]=99&price[lte]=299&sort=-quantity
+
+my-site.com/api/products?price[gte]=199&price[lte]=499&sort=-quantity
 
 Pagination implemented:
 Default Page size display is 5
 
-http://my-site/api/items?sort=discount&fields=name_price_quantity&limit=10&page=1
+In practice:
+
+my-site.com/api/items?sort=discount&page=1
+(displays first 5 items)
+Model(query).skip(0).limit(5)
+
+my-site.com/api/items?sort=discount&page=3
+(displays 3. page, skips first 15 products)
