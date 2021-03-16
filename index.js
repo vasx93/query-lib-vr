@@ -1,4 +1,4 @@
-module.exports.qsHelper = async function find(model, req, res) {
+async function find(model, req, res) {
 	const queryString = { ...req.query };
 
 	// exclude everything other than match field -> later chain methods on found document
@@ -32,4 +32,6 @@ module.exports.qsHelper = async function find(model, req, res) {
 	const result = await QUERIES.skip(skip).limit(limit).sort(sort);
 
 	return result;
-};
+}
+
+module.exports.qsHelper = find;
