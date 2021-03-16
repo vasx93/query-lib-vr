@@ -3,7 +3,11 @@ Takes 3 parameters, Model you want to query + req,res
 
 Use is easy:
 
-const results = await getAllQueryController(Model, req, res)
+npm install query-lib-vr
+
+const qsHelper = require('query-lib-vr')
+
+const results = await qsHelper.getAllController(Model, req, res)
 
 Features:
 
