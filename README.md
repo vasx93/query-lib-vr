@@ -10,7 +10,7 @@ Require it on the top of the file
 const qsHelper = require('query-lib-vr')
 
 Use
-const results = await qsHelper(Model, req, res)
+const results = await qsHelper.find(Model, req, res)
 
 Features:
 
