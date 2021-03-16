@@ -3,20 +3,22 @@ Takes 3 parameters, Model you want to query + req,res
 
 Use is easy:
 
+Install via npm package manager
 npm install query-lib-vr
 
+Require it on the top of the file
 const qsHelper = require('query-lib-vr')
 
-const results = await qsHelper.getAllController(Model, req, res)
+Use
+const results = await qsHelper(Model, req, res)
 
 Features:
 
-Regex:
+Regex
 
 Making use of >, >=, <, <= in query strings and translating so MongoDB can read them.
 
 Output would be
-
 my-site.com/api/products?price[gte]=199&price[lte]=499&sort=-quantity
 
 Pagination implemented:

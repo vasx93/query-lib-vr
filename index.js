@@ -1,4 +1,4 @@
-module.exports.qsHelper = async function getAllController(model, req, res) {
+module.exports.qsHelper = async function (model, req, res) {
 	const queryString = { ...req.query };
 
 	// exclude everything other than match field -> later chain methods on found document
