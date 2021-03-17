@@ -1,7 +1,7 @@
-This is a simple helper for document query with query strings i've developed for Node.js and Mongodb/Mongoose.
-Takes 3 parameters, Model you want to query + req,res
+This is a simple Node.js MongoDB document Query String Helper I've built.
+Works with: fields, page, skip limit, sort(asc/desc). Aslo enables the use of equality operators($gt, $gte, $lt, $lte). Takes in 3 parameters: qsHelper(model, req, res), returns the queried documents.
 
-Use is easy:
+Install:
 
 Install via npm package manager
 npm install query-lib-vr
@@ -9,14 +9,14 @@ npm install query-lib-vr
 Require it on the top of the file
 const { qsHelper } = require('query-lib-vr')
 
-Use
+Use:
 const results = await qsHelper(Model, req, res)
 
 Features:
 
 Regex
 
-Making use of >, >=, <, <= in query strings and translating so MongoDB can read them.
+Making use of equality operators >, >=, <, <= in query strings and translating so MongoDB can read them.
 
 Output would be
 my-site.com/api/products?price[gte]=199&price[lte]=499&sort=-quantity
