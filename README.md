@@ -1,4 +1,4 @@
-This is a simple helper with query strings i've developed for Node.js and Mongodb/Mongoose. For now it conists of a single controller getAllQueryController.
+This is a simple helper for document query with query strings i've developed for Node.js and Mongodb/Mongoose.
 Takes 3 parameters, Model you want to query + req,res
 
 Use is easy:
